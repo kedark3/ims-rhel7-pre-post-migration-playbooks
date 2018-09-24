@@ -1,0 +1,8 @@
+---
+- name: Simple playbook ran against CFME/ManageIQ in Ansible Services - provisioning playbook- creates a file
+  hosts: all
+  tasks: 
+    - name: Touch a new file at /tmp/ansible-touched-file on given host
+      file:
+        path: /tmp/ansible-touched-file
+        state: touch 

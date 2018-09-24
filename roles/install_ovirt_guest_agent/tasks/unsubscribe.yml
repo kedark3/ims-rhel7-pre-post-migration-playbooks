@@ -1,0 +1,6 @@
+---
+# tasks file for rh_subscription
+- name: de-activate subscription on RHEL
+  redhat_subscription:
+    state:  absent
+

@@ -1,0 +1,5 @@
+---
+- name: Install and start ovirt-guest-agent service on given host
+  hosts: all
+  roles:
+    - { role:  install_ovirt_guest_agent }

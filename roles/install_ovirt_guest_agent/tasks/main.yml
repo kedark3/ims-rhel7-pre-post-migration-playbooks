@@ -1,0 +1,23 @@
+---
+# tasks file for install_ovirt_guest_agent
+- include_tasks: subscribe.yml
+
+- name: Attempt to enable subscription and install ovirt-guest-agent
+  block:
+    - name: Enable required Repo "rhel-7-server-rh-common-rpms"
+      rhsm_repository:
+        name: rhel-7-server-rh-common-rpms
+        state: enabled
+    
+    - name: Install ovirt-guest-agent-common
+      package:
+        name: ovirt-guest-agent-common
+        state: present
+    
+    - name: Start and enable ovirt-guest-agent-common
+      service:
+        name: ovirt-guest-agent
+        state: started
+        enabled: True
+  always:
+    - include_tasks: unsubscribe.yml

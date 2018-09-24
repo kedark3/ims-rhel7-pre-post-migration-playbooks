@@ -1,0 +1,5 @@
+---
+# defaults file for install_ovirt_guest_agent
+RH_SUBSCRIPTION_USERNAME: 
+RH_SUBSCRIPTION_PASSWORD: 
+
