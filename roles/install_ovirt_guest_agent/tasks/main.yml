@@ -5,9 +5,7 @@
 - name: Attempt to enable subscription and install ovirt-guest-agent
   block:
     - name: Enable required Repo "rhel-7-server-rh-common-rpms"
-      rhsm_repository:
-        name: rhel-7-server-rh-common-rpms
-        state: enabled
+      command:  subscription-manager repos --enable=rhel-7-server-rh-common-rpms
     
     - name: Install ovirt-guest-agent-common
       package:

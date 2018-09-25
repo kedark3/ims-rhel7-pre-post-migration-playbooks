@@ -4,5 +4,5 @@
     state:  present
     username: "{{ RH_SUBSCRIPTION_USERNAME }}"
     password: "{{ RH_SUBSCRIPTION_PASSWORD }}"
-    auto_attach: true
+    autosubscribe: true
 
